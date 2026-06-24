@@ -24,12 +24,11 @@ jobs:
         run: mvn -B test
 
   snyk-security-scanning:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-4-cores
 
     steps:
       - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
-        run: snyk test -d  # enables STDERR/STDOUT as the log hints
-#        uses: snyk/actions/maven@master
+        uses: snyk/actions/maven@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
