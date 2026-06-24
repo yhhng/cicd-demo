@@ -8,13 +8,8 @@ on:
     branches: [master]
 
 jobs:
-  build:
-
+  build-with-jdk-17:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
